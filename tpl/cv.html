@@ -1,0 +1,110 @@
+{{ define "cv" }}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resume {{ .me.name }}</title>
+    <style type="text/css">{{ template "css" }}</style>
+  </head>
+  <body>
+    {{ with .me }}
+    <header class="me">
+      <h1 class="center">{{ .name }}</h1>
+      <h2 class="center">{{ .profession }}</h2>
+      <h3 class="center">{{ .address }}</h3>
+      <div class="me center">
+        <a href="mailto:{{ .email }}">
+          <i class="fa">&#xf003;</i>
+          {{ .email }}
+        </a>
+        <a href="tel:{{ .phone }}" class="phone">
+          <i class="fa">&#xf095;</i>
+          {{ .phone }}
+        </a>
+        <a href="https://github.com/{{ .github }}" class="github">
+          <i class="fa">&#xf09b;</i>
+          {{ .github }}
+        </a>
+        <a href="https://linkedin.com/in/{{ .linkedid }}" class="linkedin">
+          <i class="fa">&#xf08c;</i>
+          {{ .linkedin }}
+        </a>
+        <a href="https://{{ .homepage }}" class="homepage">
+          <i class="fa">&#xf015;</i>
+          {{ .homepage }}
+        </a>
+      </div>
+    </header>
+    {{ end }}
+    {{ with .experience }}
+    <section class="experience">
+      <h1 class="sectionheader">EXPERIENCE</h1>
+      {{ range . }}
+      <div class="job">
+        <span class="jobdescription">
+          <h2>{{ .company }}</h2>
+          <h3>{{ .position }}</h3>
+        </span>
+        <span class=timeloc>
+          <span class="timerange">{{ .start }} - {{ with .end}} {{ . }} {{ else }} present {{ end }}</span>
+          <span class="location">{{ .location }}</span>
+        </span>
+        <ul>
+          {{ range .summary }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+    {{ with .skills }}
+    <section class="skills">
+      <h1 class="sectionheader">SKILLS</h1>
+      <div class="skills">
+        {{ with .languages }}
+        <div class="languages">
+          <h2>LANGUAGES</h2>
+          <ul>
+            {{ range . }}
+            <li>{{ .language }}: {{ .level }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+        {{ with .programming }}
+        <div class="programming">
+          <h2>PROGRAMMING</h2>
+          <ul>
+            {{ range . }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+        {{ with .tools }}
+        <div class="tools">
+          <h2>TOOLS / FRAMEWORKS</h2>
+          <ul>
+            {{ range . }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+    {{ with .education }}
+    <section class="education">
+      <h1 class="sectionheader">EDUCATION</h1>
+      {{ range . }}
+      <div class="educationsite">
+        <h3>{{ .title }}</h3>
+        <span class="timerange">{{ .start }} - {{ .end }}</span>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+  </body>
+</html>
+{{ end }}
