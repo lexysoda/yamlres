@@ -1,0 +1,65 @@
+me:
+  name: Kek McLulface
+  profession: Bitcoin Solution Architect
+  email: buzz@word.com
+  phone: "0800-flextape"
+  address: Rue Daguerre, 75014 Paris, France
+  github: github
+  linkedin: linkedin
+  homepage: home.home
+experience:
+  - company: Lorem ipsum dolor sit amet
+    location: Berlin, Germany
+    position: Position
+    start: 06/2018
+    summary:
+      - blabla Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      - 123
+      - i did a lot of stuff
+  - company: Lorem ipsum dolor sit amet
+    location: Berlin, Germany
+    position: Position
+    start: 06/2018
+    end: 11/1111
+    summary:
+      - blabla
+      - 123
+      - blabla Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      - i did a lot of stuff
+  - company: Lorem ipsum dolor sit amet
+    location: Berlin, Germany
+    position: Position
+    start: 06/2018
+    end: 11/1111
+    summary:
+      - blabla
+      - 123
+      - blabla Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      - blabla Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      - i did a lot of stuff
+skills:
+  languages:
+    - language: 1337
+      level: native
+    - language: English
+      level: fluent
+  programming:
+    - Brainfuck
+    - Golang
+    - JavaScript
+    - Java
+    - Bash
+    - C++
+  tools:
+    - Google
+    - Stackoverflow
+education:
+  - title: University
+    start: 9999
+    end: 9999
+  - title: Another University
+    start: 9999
+    end: 9999
+  - title: Kindergarden
+    start: 9999
+    end: 9999
