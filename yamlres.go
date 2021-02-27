@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	"flag"
 	"fmt"
 	"html/template"
@@ -8,6 +9,9 @@ import (
 
 	"gopkg.in/yaml.v3"
 )
+
+//go:embed tpl/*
+var templates embed.FS
 
 func main() {
 	in := flag.String("i", "cv.yaml", "Input yaml file")
@@ -24,7 +28,7 @@ func main() {
 		fmt.Printf("Failed to parse yaml: %s\n", err)
 		os.Exit(1)
 	}
-	tpl := template.Must(template.ParseGlob("tpl/*"))
+	tpl, _ := template.ParseFS(templates, "*/*")
 	f, err := os.Create(*out)
 	if err != nil {
 		fmt.Printf("Failed to create %s: %s\n", *out, err)
